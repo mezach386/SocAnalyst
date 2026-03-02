@@ -3,6 +3,12 @@
    Chris Meshack — SOC Analyst Portfolio
    ===================================================================== */
 
+// ── Login Rate Limiting ───────────────────────────────────────────────
+const LOGIN_MAX_ATTEMPTS = 5;
+const LOGIN_LOCKOUT_MS = 60000; // 1 minute
+let loginAttempts = 0;
+let lockoutUntil = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
     initAdminTheme();
     initAuth();
@@ -34,13 +40,34 @@ function initAuth() {
 
     document.getElementById('loginForm').addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Rate limiting
+        const now = Date.now();
+        if (now < lockoutUntil) {
+            const secs = Math.ceil((lockoutUntil - now) / 1000);
+            const err = document.getElementById('loginError');
+            err.textContent = `Trop de tentatives. Réessayez dans ${secs}s.`;
+            err.style.display = 'block';
+            return;
+        }
+
         const pw = document.getElementById('loginPassword').value;
         const ok = await DataStore.authenticate(pw);
-        if (ok) { showAdmin(); }
-        else {
+        if (ok) {
+            loginAttempts = 0;
+            showAdmin();
+        } else {
+            loginAttempts++;
             const err = document.getElementById('loginError');
+            if (loginAttempts >= LOGIN_MAX_ATTEMPTS) {
+                lockoutUntil = Date.now() + LOGIN_LOCKOUT_MS;
+                err.textContent = `Trop de tentatives. Compte verrouillé pendant 60s.`;
+                loginAttempts = 0;
+            } else {
+                err.textContent = 'Mot de passe incorrect';
+            }
             err.style.display = 'block';
-            setTimeout(() => err.style.display = 'none', 3000);
+            setTimeout(() => err.style.display = 'none', 4000);
         }
     });
 }
@@ -55,16 +82,41 @@ function showAdmin() {
     document.getElementById('adminView').style.display = '';
 
     // Logout
+    const logoutBtn = document.getElementById('logoutBtn');
+    logoutBtn.replaceWith(logoutBtn.cloneNode(true)); // remove old listeners
     document.getElementById('logoutBtn').addEventListener('click', () => {
         DataStore.logout();
         showLogin();
     });
 
-    // Sidebar toggle (mobile)
+    // Sidebar toggle (mobile) with overlay
     const sidebarToggle = document.getElementById('adminSidebarToggle');
     const sidebar = document.getElementById('adminSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
     if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+        const newToggle = sidebarToggle.cloneNode(true);
+        sidebarToggle.replaceWith(newToggle);
+        newToggle.addEventListener('click', () => {
+            if (sidebar.classList.contains('open')) closeSidebar();
+            else openSidebar();
+        });
+    }
+
+    // Close sidebar on overlay click
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
     }
 
     // Sidebar nav
@@ -74,7 +126,7 @@ function showAdmin() {
             link.classList.add('active');
             const panel = link.dataset.panel;
             renderPanel(panel);
-            sidebar.classList.remove('open');
+            closeSidebar();
         });
     });
 

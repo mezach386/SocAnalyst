@@ -54,26 +54,46 @@ function initNavigation() {
     const toggle = document.getElementById('navToggle');
     const menu = document.getElementById('navMenu');
 
+    function closeMenu() {
+        menu.classList.remove('active');
+        toggle.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+        menu.classList.add('active');
+        toggle.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 30);
         updateActiveNav();
-    });
+    }, { passive: true });
 
     toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        menu.classList.toggle('active');
-        document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        if (menu.classList.contains('active')) closeMenu();
+        else openMenu();
     });
 
+    // Close menu on nav link click
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('nav-link')) {
             e.preventDefault();
             const target = document.querySelector(e.target.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth' });
-            menu.classList.remove('active');
-            toggle.classList.remove('active');
-            document.body.style.overflow = '';
+            closeMenu();
         }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu.classList.contains('active')) closeMenu();
+    });
+
+    // Close menu on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && menu.classList.contains('active')) closeMenu();
     });
 }
 
@@ -224,7 +244,7 @@ function renderFooter(data) {
 function renderHero(data) {
     const p = data.profile;
     const photoHtml = p.photo
-        ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}">`
+        ? `<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`
         : `<div class="hero-photo-placeholder"><i class="fas fa-user-shield"></i><span>Photo</span></div>`;
 
     return `
