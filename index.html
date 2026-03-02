@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chris Meshack — SOC Analyst spécialisé en détection des menaces, analyse de malware et réponse aux incidents. Portfolio professionnel cybersécurité.">
+    <meta name="keywords" content="SOC Analyst, Cybersécurité, Malware Analysis, Incident Response, Threat Detection, SIEM, Splunk, Wazuh, ELK, Blue Team">
+    <meta name="author" content="Chris Meshack">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chris Meshack — SOC Analyst | Cybersecurity Portfolio">
+    <meta property="og:description" content="Portfolio professionnel — Détection des menaces, Analyse de Malware & Réponse aux incidents.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mezach386.github.io/SocAnalyst/">
+
+    <title>Chris Meshack — SOC Analyst | Cybersecurity Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- ========================================
+         NAVIGATION
+    ========================================= -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>CM<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#experience" class="nav-link">Parcours</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECTION 1 — HERO
+    ========================================= -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting animate-fade-up">Bonjour, je suis</p>
+                <h1 class="hero-name animate-fade-up delay-1">Chris Meshack</h1>
+                <h2 class="hero-title animate-fade-up delay-2">
+                    <span class="typed-text" id="typed-output"></span><span class="cursor">|</span>
+                </h2>
+                <p class="hero-description animate-fade-up delay-3">
+                    Passionné par la cybersécurité, je me spécialise dans la détection des menaces, 
+                    l'analyse SIEM, l'investigation des logs, l'analyse de malware et la réponse aux incidents. 
+                    Mon objectif : protéger les infrastructures et anticiper les cyberattaques.
+                </p>
+                <div class="hero-buttons animate-fade-up delay-4">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-shield-halved"></i> Voir mes projets
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Me contacter
+                    </a>
+                </div>
+                <div class="hero-social animate-fade-up delay-5">
+                    <a href="https://github.com/mezach386" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:chris.meshack@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-image animate-fade-up delay-3">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-border"></div>
+                    <div class="hero-image-placeholder">
+                        <i class="fas fa-user-shield"></i>
+                        <span>Photo</span>
+                    </div>
+                </div>
+                <div class="hero-terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">soc-analyst@kali:~</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="terminal-prompt">$</span> <span class="terminal-cmd">whoami</span></p>
+                        <p class="terminal-output">chris.meshack — SOC Analyst</p>
+                        <p><span class="terminal-prompt">$</span> <span class="terminal-cmd">cat skills.txt</span></p>
+                        <p class="terminal-output">Threat Detection, SIEM, Malware Analysis, IR</p>
+                        <p><span class="terminal-prompt">$</span> <span class="terminal-cmd blink">_</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-indicator" aria-label="Défiler vers le bas">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- ========================================
+         SECTION 2 — À PROPOS
+    ========================================= -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">01.</span> À propos de moi
+            </h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        Analyste SOC passionné et déterminé, je consacre mon expertise à la surveillance, 
+                        la détection et la réponse aux cybermenaces. Fort d'une expérience pratique en 
+                        environnement de laboratoire et de formations continues en cybersécurité, je 
+                        développe mes compétences pour relever les défis de la sécurité informatique moderne.
+                    </p>
+                    <p>
+                        Mon approche est méthodique et orientée résultats : j'analyse les événements de 
+                        sécurité, j'identifie les indicateurs de compromission (IoC) et je mets en œuvre des 
+                        stratégies de remédiation efficaces.
+                    </p>
+                    <div class="about-specializations">
+                        <h3><i class="fas fa-crosshairs"></i> Domaines de spécialisation</h3>
+                        <div class="spec-grid">
+                            <!-- Spécialisation 1 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-satellite-dish"></i></div>
+                                <h4>Threat Monitoring</h4>
+                                <p>Surveillance continue des environnements, analyse des alertes et corrélation des événements de sécurité.</p>
+                            </div>
+                            <!-- Spécialisation 2 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-bug"></i></div>
+                                <h4>Malware Analysis</h4>
+                                <p>Analyse statique et dynamique des logiciels malveillants, sandboxing et investigation comportementale.</p>
+                            </div>
+                            <!-- Spécialisation 3 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-file-lines"></i></div>
+                                <h4>Log Analysis</h4>
+                                <p>Investigation approfondie des journaux système, réseau et applicatifs pour détecter les anomalies.</p>
+                            </div>
+                            <!-- Spécialisation 4 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-chart-line"></i></div>
+                                <h4>SIEM</h4>
+                                <p>Maîtrise de Splunk, Wazuh et ELK Stack pour la centralisation et la corrélation des événements.</p>
+                            </div>
+                            <!-- Spécialisation 5 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-fire-extinguisher"></i></div>
+                                <h4>Incident Response</h4>
+                                <p>Gestion complète des incidents : identification, confinement, éradication et récupération.</p>
+                            </div>
+                            <!-- Spécialisation 6 -->
+                            <div class="spec-card">
+                                <div class="spec-icon"><i class="fas fa-magnifying-glass"></i></div>
+                                <h4>Digital Forensics</h4>
+                                <p>Bases solides en investigation numérique : acquisition de preuves, analyse de disques et mémoire.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3 — COMPÉTENCES TECHNIQUES
+    ========================================= -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">02.</span> Compétences Techniques
+            </h2>
+            <div class="skills-grid">
+                <!-- Compétence 1 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h3>SIEM Tools</h3>
+                        <span class="skill-level">Avancé</span>
+                    </div>
+                    <p>Splunk, Wazuh, ELK Stack — Création de dashboards, règles de corrélation et alertes personnalisées.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="85"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Splunk</span><span>Wazuh</span><span>ELK</span><span>QRadar</span>
+                    </div>
+                </div>
+                <!-- Compétence 2 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-shield-virus"></i></div>
+                        <h3>EDR</h3>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <p>Détection et réponse sur les endpoints, investigation des processus suspects et threat hunting.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="70"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>CrowdStrike</span><span>Velociraptor</span><span>Sysmon</span>
+                    </div>
+                </div>
+                <!-- Compétence 3 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Network Analysis</h3>
+                        <span class="skill-level">Avancé</span>
+                    </div>
+                    <p>Capture et analyse du trafic réseau, détection d'exfiltration et investigation des communications C2.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Wireshark</span><span>tcpdump</span><span>Zeek</span><span>Suricata</span>
+                    </div>
+                </div>
+                <!-- Compétence 4 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-terminal"></i></div>
+                        <h3>Linux / Windows Security</h3>
+                        <span class="skill-level">Avancé</span>
+                    </div>
+                    <p>Hardening système, gestion des permissions, analyse des événements Windows et sécurisation Linux.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="80"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Kali Linux</span><span>Windows Event Logs</span><span>PowerShell</span>
+                    </div>
+                </div>
+                <!-- Compétence 5 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fab fa-python"></i></div>
+                        <h3>Python</h3>
+                        <span class="skill-level">Basique</span>
+                    </div>
+                    <p>Scripting pour l'automatisation des tâches SOC, parsing de logs et création d'outils d'analyse.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="50"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Automatisation</span><span>Scripting</span><span>API</span>
+                    </div>
+                </div>
+                <!-- Compétence 6 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-bug"></i></div>
+                        <h3>Malware Analysis</h3>
+                        <span class="skill-level">Intermédiaire</span>
+                    </div>
+                    <p>Analyse statique et dynamique, sandboxing avec REMnux/FlareVM, reverse engineering de base.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="65"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Ghidra</span><span>Any.Run</span><span>REMnux</span><span>PE Analysis</span>
+                    </div>
+                </div>
+                <!-- Compétence 7 -->
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon"><i class="fas fa-diagram-project"></i></div>
+                        <h3>MITRE ATT&CK</h3>
+                        <span class="skill-level">Avancé</span>
+                    </div>
+                    <p>Cartographie des TTP adverses, utilisation du framework pour le threat hunting et la documentation.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-progress="75"></div>
+                    </div>
+                    <div class="skill-tags">
+                        <span>Tactics</span><span>Techniques</span><span>Procedures</span><span>Navigator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 4 — PROJETS
+    ========================================= -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">03.</span> Projets SOC & Malware Analysis
+            </h2>
+            <p class="section-subtitle">
+                Découvrez mes projets pratiques en détection des menaces, analyse de malware et réponse aux incidents.
+            </p>
+            <div class="projects-grid">
+
+                <!-- Projet 1 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="project-tag">Blue Team</div>
+                    <h3>Détection d'attaque Brute Force avec Splunk</h3>
+                    <p>
+                        Mise en place d'un laboratoire de détection simulant des attaques par force brute 
+                        sur SSH et RDP. Configuration de règles de corrélation dans Splunk pour identifier 
+                        et alerter en temps réel sur les tentatives d'intrusion répétées.
+                    </p>
+                    <div class="project-tools">
+                        <h4><i class="fas fa-wrench"></i> Outils utilisés</h4>
+                        <div class="tool-tags">
+                            <span>Splunk</span>
+                            <span>Kali Linux</span>
+                            <span>Hydra</span>
+                            <span>Windows Server</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Détection automatisée des tentatives de brute force avec alertes configurées et dashboard de monitoring en temps réel.</p>
+                    </div>
+                    <a href="#" class="btn btn-sm">
+                        <i class="fas fa-arrow-right"></i> Voir détails
+                    </a>
+                </div>
+
+                <!-- Projet 2 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-tag">Infrastructure</div>
+                    <h3>Mise en place d'un lab SOC avec Wazuh</h3>
+                    <p>
+                        Conception et déploiement d'un Security Operations Center virtuel complet utilisant 
+                        Wazuh comme SIEM principal. Intégration d'agents sur plusieurs systèmes (Windows, Linux) 
+                        pour la collecte centralisée des logs et la détection des comportements suspects.
+                    </p>
+                    <div class="project-tools">
+                        <h4><i class="fas fa-wrench"></i> Outils utilisés</h4>
+                        <div class="tool-tags">
+                            <span>Wazuh</span>
+                            <span>VirtualBox</span>
+                            <span>Ubuntu Server</span>
+                            <span>Windows 10</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Lab SOC fonctionnel avec détection d'intrusion, analyse des vulnérabilités et conformité réglementaire configurée.</p>
+                    </div>
+                    <a href="#" class="btn btn-sm">
+                        <i class="fas fa-arrow-right"></i> Voir détails
+                    </a>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="project-tag">Incident Response</div>
+                    <h3>Analyse d'un incident simulé — Phishing Investigation</h3>
+                    <p>
+                        Investigation complète d'une campagne de phishing simulée : analyse des en-têtes 
+                        d'email, extraction des URLs malveillantes, identification des indicateurs de 
+                        compromission (IoC) et rédaction d'un rapport technique détaillé.
+                    </p>
+                    <div class="project-tools">
+                        <h4><i class="fas fa-wrench"></i> Outils utilisés</h4>
+                        <div class="tool-tags">
+                            <span>PhishTool</span>
+                            <span>VirusTotal</span>
+                            <span>URLScan.io</span>
+                            <span>TheHive</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Identification complète de la chaîne d'attaque, extraction des IoC et recommandations de remédiation documentées.</p>
+                    </div>
+                    <a href="#" class="btn btn-sm">
+                        <i class="fas fa-arrow-right"></i> Voir détails
+                    </a>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                    <div class="project-tag">Malware Analysis</div>
+                    <h3>Analyse d'un malware — Détection, comportement & rapport</h3>
+                    <p>
+                        Analyse complète d'un échantillon malveillant : examen statique (PE headers, strings, 
+                        imports), analyse dynamique en sandbox (comportement réseau, modifications fichiers/registres),
+                        et rédaction d'un rapport technique structuré avec les TTP MITRE ATT&CK identifiés.
+                    </p>
+                    <div class="project-tools">
+                        <h4><i class="fas fa-wrench"></i> Outils utilisés</h4>
+                        <div class="tool-tags">
+                            <span>Ghidra</span>
+                            <span>Any.Run</span>
+                            <span>REMnux</span>
+                            <span>PEStudio</span>
+                            <span>YARA</span>
+                        </div>
+                    </div>
+                    <div class="project-result">
+                        <h4><i class="fas fa-trophy"></i> Résultat</h4>
+                        <p>Rapport d'analyse complet identifiant le type de malware, son mécanisme de persistance et les règles de détection YARA créées.</p>
+                    </div>
+                    <a href="#" class="btn btn-sm">
+                        <i class="fas fa-arrow-right"></i> Voir détails
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 5 — EXPÉRIENCE / PARCOURS
+    ========================================= -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">04.</span> Expérience & Parcours
+            </h2>
+            <div class="timeline">
+                <!-- Expérience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 — Présent</div>
+                        <h3>SOC Analyst — Home Lab Experience</h3>
+                        <p>
+                            Mise en place et gestion d'un laboratoire SOC personnel complet. Surveillance des 
+                            événements de sécurité, investigation des alertes, création de règles de détection 
+                            personnalisées et documentation des procédures opérationnelles.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Splunk</span><span>Wazuh</span><span>Sysmon</span><span>ELK</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Expérience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 — Présent</div>
+                        <h3>Blue Team Practice</h3>
+                        <p>
+                            Entraînement intensif aux pratiques défensives : threat hunting, analyse des 
+                            comportements suspects, réponse aux incidents simulés et développement de 
+                            playbooks de réponse. Utilisation régulière de plateformes comme LetsDefend et Blue Team Labs.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>Threat Hunting</span><span>DFIR</span><span>Playbooks</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Expérience 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 — Présent</div>
+                        <h3>Malware Analysis Lab</h3>
+                        <p>
+                            Laboratoire d'analyse de malware dédié : environnement isolé pour l'analyse 
+                            statique et dynamique d'échantillons malveillants. Pratique du sandboxing avec 
+                            REMnux et FlareVM, reverse engineering de base avec Ghidra et création de 
+                            règles YARA pour la détection.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>REMnux</span><span>Ghidra</span><span>YARA</span><span>Sandboxing</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Expérience 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 — Présent</div>
+                        <h3>Participation CTF</h3>
+                        <p>
+                            Participation régulière à des compétitions Capture The Flag : résolution de 
+                            challenges en forensics, analyse réseau, cryptographie et exploitation. 
+                            Développement de la pensée critique et des compétences techniques sous pression.
+                        </p>
+                        <div class="timeline-tags">
+                            <span>TryHackMe</span><span>HackTheBox</span><span>CyberDefenders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 6 — CERTIFICATIONS
+    ========================================= -->
+    <section id="certifications" class="section certs-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">05.</span> Certifications
+            </h2>
+            <p class="section-subtitle">
+                Certifications obtenues et en cours de préparation pour valider mes compétences en cybersécurité.
+            </p>
+            <div class="certs-grid">
+                <!-- Certification 1 -->
+                <div class="cert-card">
+                    <div class="cert-badge pending">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>CompTIA Security+</h3>
+                    <p>Certification fondamentale couvrant les concepts essentiels de la cybersécurité, la gestion des risques et la réponse aux incidents.</p>
+                    <span class="cert-status pending">
+                        <i class="fas fa-clock"></i> En préparation
+                    </span>
+                </div>
+                <!-- Certification 2 -->
+                <div class="cert-card">
+                    <div class="cert-badge pending">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>GREM — GIAC Reverse Engineering Malware</h3>
+                    <p>Certification avancée en analyse de malware, reverse engineering et investigation des logiciels malveillants.</p>
+                    <span class="cert-status pending">
+                        <i class="fas fa-clock"></i> Objectif futur
+                    </span>
+                </div>
+                <!-- Certification 3 -->
+                <div class="cert-card">
+                    <div class="cert-badge pending">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>GCFA — GIAC Certified Forensic Analyst</h3>
+                    <p>Certification en investigation numérique avancée, analyse forensique de systèmes et réponse aux incidents complexes.</p>
+                    <span class="cert-status pending">
+                        <i class="fas fa-clock"></i> Objectif futur
+                    </span>
+                </div>
+                <!-- Certification 4 — Placeholder pour ajout facile -->
+                <div class="cert-card cert-placeholder">
+                    <div class="cert-badge add">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Prochaine certification</h3>
+                    <p>Espace réservé pour ajouter une nouvelle certification. Dupliquez ce bloc et modifiez les informations.</p>
+                    <span class="cert-status add">
+                        <i class="fas fa-plus-circle"></i> À ajouter
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 7 — CONTACT
+    ========================================= -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-number">06.</span> Contact
+            </h2>
+            <p class="section-subtitle">
+                Intéressé par une collaboration ou une opportunité ? N'hésitez pas à me contacter.
+            </p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:chris.meshack@email.com">chris.meshack@email.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="#" target="_blank" rel="noopener">linkedin.com/in/chrismeshack</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/mezach386" target="_blank" rel="noopener">github.com/mezach386</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-paper-plane"></i> Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>Chris Meshack<span class="logo-bracket">/&gt;</span>
+                </p>
+                <p class="footer-text">SOC Analyst | Cybersecurity Enthusiast | Threat Detection, Malware Analysis & Incident Response</p>
+                <div class="footer-social">
+                    <a href="https://github.com/mezach386" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="mailto:chris.meshack@email.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2026 Chris Meshack. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
