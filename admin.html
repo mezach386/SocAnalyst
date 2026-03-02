@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Admin — Chris Meshack Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="admin-body">
+
+    <!-- ====== LOGIN VIEW ====== -->
+    <div id="loginView" class="login-page">
+        <div class="login-card">
+            <h1><i class="fas fa-shield-halved" style="color:var(--accent);margin-right:8px"></i> Admin</h1>
+            <p class="login-subtitle">Connectez-vous pour gérer votre portfolio</p>
+            <p class="login-error" id="loginError">Mot de passe incorrect</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginPassword">Mot de passe</label>
+                    <input type="password" id="loginPassword" placeholder="Entrez le mot de passe" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px">
+                    <i class="fas fa-sign-in-alt"></i> Se connecter
+                </button>
+            </form>
+            <p style="margin-top:20px;font-size:0.75rem;color:var(--text-muted)">Mot de passe par défaut : admin123</p>
+        </div>
+    </div>
+
+    <!-- ====== ADMIN VIEW ====== -->
+    <div id="adminView" style="display:none">
+
+        <!-- Admin Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo"><span class="nav-logo-dot"></span> Portfolio Admin</a>
+                <div class="nav-controls">
+                    <button class="nav-btn" id="adminThemeToggle" title="Theme"><i class="fas fa-moon"></i></button>
+                    <a href="index.html" class="btn btn-text btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> Voir le site</a>
+                    <button class="btn btn-outline btn-sm" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Déconnexion</button>
+                    <button class="nav-toggle" id="adminSidebarToggle" aria-label="Menu"><span class="hamburger"></span></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Admin Layout -->
+        <div class="admin-layout">
+            <!-- Sidebar -->
+            <aside class="admin-sidebar" id="adminSidebar">
+                <div class="sidebar-label">Gestion</div>
+                <button class="sidebar-link active" data-panel="profile"><i class="fas fa-user"></i> Profil</button>
+                <button class="sidebar-link" data-panel="skills"><i class="fas fa-code"></i> Compétences</button>
+                <button class="sidebar-link" data-panel="specializations"><i class="fas fa-crosshairs"></i> Spécialisations</button>
+                <button class="sidebar-link" data-panel="projects"><i class="fas fa-folder-open"></i> Projets SOC</button>
+                <button class="sidebar-link" data-panel="malware"><i class="fas fa-virus"></i> Malware Analysis</button>
+                <button class="sidebar-link" data-panel="certifications"><i class="fas fa-award"></i> Certifications</button>
+                <button class="sidebar-link" data-panel="experience"><i class="fas fa-route"></i> Parcours</button>
+                <div class="sidebar-label" style="margin-top:16px">Configuration</div>
+                <button class="sidebar-link" data-panel="sections"><i class="fas fa-toggle-on"></i> Sections</button>
+                <button class="sidebar-link" data-panel="security"><i class="fas fa-lock"></i> Sécurité</button>
+                <button class="sidebar-link" data-panel="data"><i class="fas fa-database"></i> Données</button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="admin-main" id="adminMain">
+                <!-- Panels rendered by admin.js -->
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>
